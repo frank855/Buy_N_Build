@@ -1,0 +1,58 @@
+<template name="Desktop">
+{{> Nav}}
+
+<div class="row">
+<div class="col-sm-2">
+{{> SideMenu}}
+</div>
+
+<div class="col-sm-4">
+  {{#each desktop}}
+  <div class="panel panel-primary">
+  <div class="panel-heading">
+  <h3 class="panel-title">{{nombre}}</h3>
+  </div>
+  <div class="panel-body">
+
+  <ul>
+  <li> Procesador: {{cpu_nom}} {{cpu_vel}}GHz </li>
+
+  <li> Memoria Ram:
+  <ul>
+  {{#each ram}}
+  <li>{{ram_tipo}} {{ram_cap}}Gb {{ram_vel}}MHz</li>
+  {{/each}}
+  </ul>
+  </li>
+
+  <li> Disco Duro:
+  <ul>
+  {{#each hdd}}
+  <li>{{hdd_cap}}{{hdd_unit}} {{hdd_tipo}} {{hdd_vel}}{{hdd_velunit}}</li>
+  {{/each}}
+  </ul>
+  </li>
+
+  <li> Tipo de adaptador de video: {{gpu_integrado}}
+  <ul>
+  {{#each gpu}}
+  <li>{{nombre_gpu}} {{gpu_cap}} {{gpu_tipo_mem}}, Velocidad de memoria: {{gpu_vel}}MHz</li>
+  {{/each}}
+  </ul>
+  </li>
+
+  <li> A solo <b>{{precio}}$</b> </li>
+  {{#with img}}
+  <img src="{{this.url}}" class="img-responsive" alt="ImgDb" width="200" height="100">
+  {{/with}}
+  <a href="#"> Ver mas </a>
+  </ul>
+
+  </div>
+  </div>
+  {{/each}}
+
+</div>
+
+</div>
+</template>
