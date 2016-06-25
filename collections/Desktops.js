@@ -1,8 +1,4 @@
 Desktop = new Mongo.Collection('desktop');
-Images = new FS.Collection("images", {
-  stores: [new FS.Store.FileSystem("images", {path: "~/images"})]
-});
-
 Disco_Duro = new SimpleSchema({
   hdd_unit:{
     type: String,
@@ -19,14 +15,14 @@ Disco_Duro = new SimpleSchema({
     label: "Tipo de disco duro SATA, De Estado Solido, Hibrido...",
   },
 
-  hdd_vel:{
-    type: Number,
-    label: "Velocidad del disco duro en la unidad definida",
-  },
-
   hdd_velunit:{
     type: String,
     label: "Unidad en la que se mide la velocidad del disco duro mb/s, RPM, etc...",
+  },
+
+  hdd_vel:{
+    type: Number,
+    label: "Velocidad del disco duro en la unidad definida",
   },
 
 });
@@ -56,6 +52,7 @@ Gpu = new SimpleSchema({
   gpu_cap:{
     type: Number,
     label: "Cantidad de vram en Gb",
+    decimal: true,
   },
   gpu_tipo_mem:{
     type: String,

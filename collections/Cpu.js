@@ -1,17 +1,51 @@
 Cpu = new Mongo.Collection('cpu');
-var Schemas = {};
-Schemas.Cpu = new SimpleSchema({
+Ram_Comp_Vel = new SimpleSchema({
+    mem_ram_comp_vel:{
+      type: Number,
+      label: "Velocidad de la memoria ram compatible en MHz",
+    },
+
+});
+
+Ram_Comp = new SimpleSchema({
+  mem_ram_comp_tipo:{
+    type: String,
+    label: "Tipo de memoria ram DDR",
+  },
+
+  ram_comp_vel:{
+    type:[Ram_Comp_Vel]
+  },
+
+
+});
+
+CpuSchema = new SimpleSchema({
   nombre:{
     type: String,
     label: "Nombre del cpu",
   },
+
   precio:{
     type: Number,
     label: "Precio del cpu",
+    decimal: true,
   },
+
+  marca:{
+    type: String,
+    label: "Marca del cpu",
+  },
+
+  zocalo:{
+    type: String,
+    label: "Zocalo del cpu",
+  },
+
   velocidad:{
     type: Number,
     label: "Velocidad del cpu en GHz",
+    decimal: true,
   },
   cache:{
     type: Number,
@@ -25,43 +59,20 @@ Schemas.Cpu = new SimpleSchema({
     type: String,
     label: "Capacidad de leer instrucciones de 64 o 32 bits",
   },
-  Nucleos:{
+  nucleos:{
     type: Number,
     label: "Número de nucleos disponibles (logicos o fisicos)",
   },
 // -------------------------------------------------------------------
-  mem_ram_comp_tipo:{
-    type: String,
-    label: "Tipo de memoria ram DDR",
-  },
 
-  mem_ram_comp_vel_1:{
-    type: Number,
-    label: "Velocidad de la memoria ram compatible en MHz",
-  },
-
-  mem_ram_comp_vel_2:{
-    type: Number,
-    label: "Velocidad de la memoria ram compatible en MHz",
-    optional: true,
-  },
-
-  mem_ram_comp_vel_3:{
-    type: Number,
-    label: "Velocidad de la memoria ram compatible en MHz",
-    optional: true,
-  },
-
-  mem_ram_comp_vel_4:{
-    type: Number,
-    label: "Velocidad de la memoria ram compatible en MHz",
-    optional: true,
+  ram_comp:{
+    type:[Ram_Comp]
   },
 
 // -------------------------------------------------------------------
   gpu_integrado:{
-    type: Boolean,
-    label: "Si el cpu cuenta con gpu integrado",
+    type: String,
+    label: "Si el cpu cuenta con gpu integrado, si o no",
   },
 
   gpu_nom:{
@@ -82,6 +93,15 @@ Schemas.Cpu = new SimpleSchema({
     optional: true,
   },
 
-});
+  img:{
+    type: String,
+    autoform: {
+      afFieldInput: {
+        type: "cfs-file",
+        collection: "images",
+      }
+    }
+    },
 
-Cpu.attachSchema(Schemas.Cpu);
+});
+Cpu.attachSchema(CpuSchema);

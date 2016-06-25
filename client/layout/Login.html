@@ -1,27 +1,24 @@
 <template name="Login">
 {{> Nav}}
 
-<div class="well">
+<div class="row">
+  <div class="col-md-2">
+{{> SideMenu}}
+  </div>
 
-  <div class="col-md-5">
-  <div class="panel panel-primary">
-              <div class="panel-heading">
-              <i><h3 class="panel-title">Inicio de sesión / Creación de Usuario</h3></i>
-              </div>
-              <div class="panel-body">
-                  <h4>
-                <span class="label label-primary">Usuario: <br>
-                </span> <input type="text" name="user_s" placeholder="Usuario..."> <br>
-                <span class="label label-primary">Contraseña: <br></span>
-                <input type="password" name="pass_s" placeholder="******..."><br>
-                <br>
-                <button type="submit" name="btn" class="btn btn-lg btn-warning">Enviar</button>
 
-              </h4>
-            </div>
-            </div>
-    </div>
-
+<div class="col-md-6">
+  <div class="well">
+      <form class="form-signin">
+        <h2 class="form-signin-heading">Accede a tu cuenta</h2>
+        <input type="user" class="form-control" placeholder="Usuario" required="" autofocus="">
+        <input type="password" class="form-control" placeholder="Contraseña" required="">
+        <br>
+        <button type="submit" class="btn btn-lg btn-primary btn-block" >Iniciar Sesión</button>
+      </form>
 </div>
+</div>
+</div>
+{{> Footer}}
 
 </template>

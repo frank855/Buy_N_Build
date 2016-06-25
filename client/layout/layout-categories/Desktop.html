@@ -2,11 +2,11 @@
 {{> Nav}}
 
 <div class="row">
-<div class="col-sm-2">
+<div class="col-md-2">
 {{> SideMenu}}
 </div>
 
-<div class="col-sm-4">
+<div class="col-md-4">
   {{#each desktop}}
   <div class="panel panel-primary">
   <div class="panel-heading">
@@ -36,16 +36,20 @@
   <li> Tipo de adaptador de video: {{gpu_integrado}}
   <ul>
   {{#each gpu}}
-  <li>{{nombre_gpu}} {{gpu_cap}} {{gpu_tipo_mem}}, Velocidad de memoria: {{gpu_vel}}MHz</li>
+  <li>{{nombre_gpu}} {{gpu_cap}}Gb {{gpu_tipo_mem}}, Velocidad de memoria: {{gpu_vel}}MHz</li>
   {{/each}}
   </ul>
   </li>
 
   <li> A solo <b>{{precio}}$</b> </li>
-  {{#with img}}
-  <img src="{{this.url}}" class="img-responsive" alt="ImgDb" width="200" height="100">
-  {{/with}}
-  <a href="#"> Ver mas </a>
+
+{{#with FS.GetFile "images" (img)}}
+  <img src="{{this.url}}" class="img-responsive" alt="ImgDb" width="170" height="100">
+{{/with}}
+
+    <button type="submit" class="btn btn-md btn-primary " >Añadir a Carrito</button>
+    <button type="submit" class="btn btn-md btn-primary " >Detalles</button>
+
   </ul>
 
   </div>

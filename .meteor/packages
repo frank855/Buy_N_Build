@@ -29,7 +29,5 @@ aldeed:collection2
 meteortoys:allthings
 cfs:standard-packages
 cfs:gridfs
-naxio:autoform-file
-cfs:filesystem
-yogiben:autoform-file
 cfs:autoform
+cfs:ui

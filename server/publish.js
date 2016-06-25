@@ -4,3 +4,6 @@ Meteor.publish('desktop', function desktopPublication() {
 Meteor.publish('images', function desktopPublication() {
       return Images.find();
   });
+Meteor.publish('cpu', function cpuPublication() {
+      return Cpu.find();
+  });

@@ -1,0 +1,37 @@
+<template name="Cpu">
+{{> Nav}}
+
+<div class="row">
+<div class="col-md-2">
+{{> SideMenu}}
+</div>
+
+<div class="col-md-4">
+  {{#each cpu}}
+  <div class="panel panel-primary">
+  <div class="panel-heading">
+  <h3 class="panel-title">{{nombre}}</h3>
+  </div>
+  <div class="panel-body">
+
+  <ul>
+
+  <li> A solo <b>{{precio}}$</b> </li>
+
+{{#with FS.GetFile "images" (img)}}
+  <img src="{{this.url}}" class="img-responsive" alt="ImgDb" width="170" height="100">
+{{/with}}
+
+    <button type="submit" class="btn btn-md btn-primary " >Añadir a Carrito</button>
+    <button type="submit" class="btn btn-md btn-primary " >Detalles</button>
+
+  </ul>
+
+  </div>
+  </div>
+  {{/each}}
+
+</div>
+
+</div>
+</template>
