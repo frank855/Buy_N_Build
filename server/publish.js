@@ -7,3 +7,6 @@ Meteor.publish('images', function desktopPublication() {
 Meteor.publish('cpu', function cpuPublication() {
       return Cpu.find();
   });
+Meteor.publish('case', function CaseP(){
+  return Case.find();
+  });
