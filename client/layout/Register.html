@@ -1,0 +1,25 @@
+<template name="Register">
+{{> Nav}}
+
+<div class="row">
+  <div class="col-md-2">
+{{> SideMenu}}
+  </div>
+
+
+<div class="col-md-6">
+  <div class="well">
+      <form class="form-signin">
+        <h2 class="form-signin-heading">Crea tu cuenta</h2>
+        <input type="user" class="form-control" placeholder="Usuario" required="" autofocus="">
+        <input type="email" class="form-control" placeholder="Correo" required="">
+        <input type="password" class="form-control" placeholder="Contraseña" required="">
+        <br>
+        <button type="submit" class="btn btn-lg btn-primary btn-block" >Crear Cuenta</button>
+      </form>
+</div>
+</div>
+</div>
+{{> Footer}}
+
+</template>
