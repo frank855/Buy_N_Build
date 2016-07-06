@@ -5,10 +5,12 @@ import { Meteor } from 'meteor/meteor';
 import './Desktop.html';
 import './Cpu.html';
 import './Casetest.html';
+import './Tvideotest.html';
 Meteor.subscribe('desktop');
 Meteor.subscribe('images');
 Meteor.subscribe('cpu');
 Meteor.subscribe('case');
+Meteor.subscribe('tvideo');
 
 Template.Desktop.helpers({
   desktop: ()=>{
@@ -25,5 +27,11 @@ Template.Cpu.helpers({
 Template.Casetest.helpers({
   case: ()=>{
     return Case.find({});
+  }
+});
+
+Template.Tvideotest.helpers({
+  tvideo: ()=>{
+    return TVideo.find({});
   }
 });

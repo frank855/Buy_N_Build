@@ -8,6 +8,19 @@ tarjeta:{
 }
 });
 
+DiscoSchema = new SimpleSchema({
+
+cantidadbahia:{
+  type: Number,
+  label: "Cantidad de bahias para Discos duros",
+},
+
+tamaño:{
+  type: Number,
+  label: "tamaño de la bahia",
+}
+});
+
 Schemas = new SimpleSchema({
 
 nombre:{
@@ -25,9 +38,25 @@ ranuras:{
 type: Number,
 label: "Cantidad de ranuras de expansión",
 },
+
 tarjetamadrecompatible:{
   type:[CaseSchema]
-}
+},
+
+discoduro:{
+type:[DiscoSchema]
+},
+
+img:{
+  type: String,
+  autoform: {
+    afFieldInput: {
+      type: "cfs-file",
+      collection: "images",
+    }
+  }
+  },
+  
 });
 
 Case.attachSchema(Schemas);

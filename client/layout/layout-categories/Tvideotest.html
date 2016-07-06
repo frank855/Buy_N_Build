@@ -1,34 +1,28 @@
-<template name="Casetest">
+<Template name="Tvideotest">
 {{> Nav}}
+
 <div class="row">
 <div class="col-sm-2">
 {{> SideMenu}}
 </div>
 
 <div class="col-sm-4">
-  {{#each case}}
+  {{#each tvideo}}
+
   <div class="panel panel-primary">
   <div class="panel-heading">
   <h3 class="panel-title">{{nombre}}</h3>
   </div>
   <div class="panel-body">
   <ul>
-  <li> Case: {{nombre}} {{precio}} {{ranuras}} </li>
+  <li> Tarjeta de video: {{nombre}} {{interfaz}} {{pines}} {{gpu}} {{relojnucleo}} {{tamañomemoria}} {{interfazmemoria}} {{tipomemoria}} {{precio}}</li>
 
-  Tarjeta madre compatibles
-
-  {{#each tarjetamadrecompatible}}
-  <li> Tarjeta: {{tarjeta}} </li>
+Puertos
+  {{#each puertos}}
+  <li> Puertos: {{puerto}}{{cantidad}} </li>
   {{/each}}
 
-  Bahia para disco duros
-
-  {{#each discoduro}}
-  <li> disco: {{cantidadbahia}} {{tamaño}}</li>
-  {{/each}}
-
-  Insertar imagen
-  
+Insertar imagen
   {{#with FS.GetFile "images" (img)}}
     <img src="{{this.url}}" class="img-responsive" alt="ImgDb" width="170" height="100">
   {{/with}}
@@ -44,5 +38,6 @@
 </div>
 
 </div>
+
 
 </template>

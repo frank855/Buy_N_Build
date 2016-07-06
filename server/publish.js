@@ -10,3 +10,7 @@ Meteor.publish('cpu', function cpuPublication() {
 Meteor.publish('case', function CaseP(){
   return Case.find();
   });
+
+Meteor.publish('tvideo', function tvideoP(){
+  return TVideo.find();
+});
