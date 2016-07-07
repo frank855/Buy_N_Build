@@ -7,12 +7,14 @@ import './Cpu.html';
 import './Casetest.html';
 import './Tvideotest.html';
 import './Harddrive.html';
+import './Powersupplies.html';
 Meteor.subscribe('desktop');
 Meteor.subscribe('images');
 Meteor.subscribe('cpu');
 Meteor.subscribe('case');
 Meteor.subscribe('tvideo');
 Meteor.subscribe('harddrive');
+Meteor.subscribe('powersupplies');
 
 Template.Desktop.helpers({
   desktop: ()=>{
@@ -41,6 +43,13 @@ Template.Tvideotest.helpers({
 Template.Harddrive.helpers({
   harddrive: ()=>{
     return Harddrive.find({});
+}
+
+});
+
+Template.Powersupplies.helpers({
+  powersupplies: ()=>{
+    return Powersupplies.find({});
 }
 
 });

@@ -1,0 +1,43 @@
+<template name="Powersupplies">
+{{> Nav}}
+
+<div class="row">
+<div class="col-sm-2">
+{{> SideMenu}}
+</div>
+
+<div class="col-sm-4">
+  {{#each powersupplies}}
+
+  <div class="panel panel-primary">
+  <div class="panel-heading">
+  <h3 class="panel-title">{{ps_nombre}}</h3>
+  </div>
+  <div class="panel-body">
+  <ul>
+  <li> Fuente de Poder: {{ps_nombre}} </li>
+  <li> con Voltaje: {{ps_watt}} W</li>
+  <li> pin: {{ps_pins}} </li>
+
+  <li> abanico: {{ps_abanico}} </li>
+  <li> Conectores: {{ps_conector}} </li>
+
+  <li> Al precio de <b>{{ps_precio}} </b> </li>
+
+  {{#with FS.GetFile "images" (img)}}
+  <img src="{{this.url}}" class="img-responsive" alt="ImgDb" width="170" height="100">
+{{/with}}
+
+    <button type="submit" class="btn btn-md btn-primary " >Añadir a Carrito</button>
+    <button type="submit" class="btn btn-md btn-primary " >Detalles</button>
+
+  </ul>
+
+  </div>
+  </div>
+  {{/each}}
+
+</div>
+
+</div>
+</template>
