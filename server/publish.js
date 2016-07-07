@@ -14,3 +14,7 @@ Meteor.publish('case', function CaseP(){
 Meteor.publish('tvideo', function tvideoP(){
   return TVideo.find();
 });
+
+Meteor.publish('harddrive', function harddrivePub() {
+        return Harddrive.find();
+  });

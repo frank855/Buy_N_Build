@@ -6,11 +6,13 @@ import './Desktop.html';
 import './Cpu.html';
 import './Casetest.html';
 import './Tvideotest.html';
+import './Harddrive.html';
 Meteor.subscribe('desktop');
 Meteor.subscribe('images');
 Meteor.subscribe('cpu');
 Meteor.subscribe('case');
 Meteor.subscribe('tvideo');
+Meteor.subscribe('harddrive');
 
 Template.Desktop.helpers({
   desktop: ()=>{
@@ -34,4 +36,11 @@ Template.Tvideotest.helpers({
   tvideo: ()=>{
     return TVideo.find({});
   }
+});
+
+Template.Harddrive.helpers({
+  harddrive: ()=>{
+    return Harddrive.find({});
+}
+
 });
