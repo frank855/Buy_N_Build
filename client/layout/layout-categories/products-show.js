@@ -8,6 +8,7 @@ import './Casetest.html';
 import './Tvideotest.html';
 import './Harddrive.html';
 import './Powersupplies.html';
+import './Motherboard.html';
 Meteor.subscribe('desktop');
 Meteor.subscribe('images');
 Meteor.subscribe('cpu');
@@ -15,6 +16,7 @@ Meteor.subscribe('case');
 Meteor.subscribe('tvideo');
 Meteor.subscribe('harddrive');
 Meteor.subscribe('powersupplies');
+Meteor.subscribe('motherboard');
 
 Template.Desktop.helpers({
   desktop: ()=>{
@@ -50,6 +52,13 @@ Template.Harddrive.helpers({
 Template.Powersupplies.helpers({
   powersupplies: ()=>{
     return Powersupplies.find({});
+}
+
+});
+
+Template.Motherboard.helpers({
+  motherboard: ()=>{
+    return Motherboard.find({});
 }
 
 });

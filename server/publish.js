@@ -16,9 +16,13 @@ Meteor.publish('tvideo', function tvideoP(){
 });
 
 Meteor.publish('harddrive', function harddrivePub() {
-        return Harddrive.find();
+      return Harddrive.find();
   });
 
-  Meteor.publish('powersupplies', function powersuppliesPub() {
-        return Powersupplies.find();
+Meteor.publish('powersupplies', function powersuppliesPub() {
+      return Powersupplies.find();
+  });
+
+Meteor.publish('motherboard', function motherboardPub() {
+      return Motherboard.find();
   });
