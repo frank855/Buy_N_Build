@@ -1,5 +1,5 @@
 <template name="Nav">
-  <nav class="navbar navbar-inverse" style="background-color: 	#0059b3;">
+  <nav class="navbar navbar-inverse">
   <div class="container-fluid">
             <div class="navbar-header">
               <a class="navbar-brand" href="/"><img src="/imgs/logo.png"></a>
@@ -7,34 +7,34 @@
           <div class="navbar-collapse collapse">
                       <ul class="nav navbar-nav">
                         <li class="dropdown">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cuenta <span class="caret"></span></a>
+                          <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cuenta <span class="caret"></span></a>
                           <ul class="dropdown-menu">
                             <li><a href="/login">Iniciar Sesión</a></li>
                             <li><a href="/register">Crear Cuenta</a></li>
                             <li><a href="#">Opciones de Cuenta</a></li>
-                          </ul>
+                          </ul> -->
                         </li>
-                        <li><a href="#contact">Arma tu PC</a></li>
+                        <li><a href="#contact"><span class="glyphicon glyphicon-cog"></span> Arma tu PC</a></li>
                         <li class="dropdown">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Productos <span class="caret"></span></a>
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list"></span> Productos <span class="caret"></span></a>
                           <ul class="dropdown-menu">
-                            <li><a href="/desktop">Desktops</a></li>
-                            <li><a href="#">Laptops</a></li>
-                            <li><a href="/Components">Componentes</a></li>
-                            <li><a href="#">Accesorios</a></li>
+                            <li><a href="/desktop"><i class="fa fa-desktop"></i> Desktops</a></li>
+                            <li><a href="#"><i class="fa fa-laptop"></i> Laptops</a></li>
+                            <li><a href="/Components"><i class="fa fa-th"></i> Componentes</a></li>
+                            <li><a href="#"><i class="fa fa-headphones"></i> Accesorios</a></li>
                           </ul>
                         </li>
                         <!-- Barra de busqueda -->
-                        <form class="navbar-form navbar-left" role="search">
+                        <!-- <form class="navbar-form navbar-left" role="search">
                             <div class="form-group">
                              <input type="text" class="form-control" placeholder="Search">
                             </div>
                              <button type="submit" class="btn btn-default">Submit</button>
-                         </form>
+                         </form> -->
                         <!--Linea de sesion -->
                         <ul class="nav navbar-nav navbar-right">
-                          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                          <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Crear Cuenta</a></li>
+                          <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Iniciar Sesión</a></li>
                         </ul>
                       </ul>
                     </div>

@@ -1,14 +1,8 @@
 <template name="Desktop">
-{{> Nav}}
-
-<div class="row">
-<div class="col-md-2">
-{{> SideMenu}}
-</div>
 
 <div class="col-md-4">
   {{#each desktop}}
-  <div class="panel panel-primary">
+  <div class="panel panel-default">
   <div class="panel-heading">
   <h3 class="panel-title">{{nombre}}</h3>
   </div>
@@ -55,8 +49,6 @@
   </div>
   </div>
   {{/each}}
-
-</div>
 
 </div>
 </template>

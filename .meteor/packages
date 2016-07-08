@@ -31,3 +31,4 @@ cfs:standard-packages
 cfs:gridfs
 cfs:autoform
 cfs:ui
+fortawesome:fontawesome

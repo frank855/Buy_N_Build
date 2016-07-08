@@ -14,3 +14,23 @@ img {
 #cat-img:hover {
     opacity: 0.5;
   }
+
+  .side_bar ul {
+      margin: 0;
+      padding: 0;
+      width:185px;
+      list-style-type: none;
+  }
+
+  .side_bar ul li a {
+      text-decoration: none;
+      color: white;
+      padding: 10.5px 11px;
+      background-color: #404040;
+      display:block;
+  }
+
+  .side_bar ul li a:hover, .side_bar ul li .current {
+      color: #404040;
+      background-color: white;
+  }
