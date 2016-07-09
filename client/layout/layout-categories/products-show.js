@@ -9,6 +9,8 @@ import './Tvideotest.html';
 import './Harddrive.html';
 import './Powersupplies.html';
 import './Motherboard.html';
+import './Ramtest.html';
+
 Meteor.subscribe('desktop');
 Meteor.subscribe('images');
 Meteor.subscribe('cpu');
@@ -17,6 +19,7 @@ Meteor.subscribe('tvideo');
 Meteor.subscribe('harddrive');
 Meteor.subscribe('powersupplies');
 Meteor.subscribe('motherboard');
+Meteor.subscribe('ram');
 
 Template.Desktop.helpers({
   desktop: ()=>{
@@ -41,25 +44,30 @@ Template.Tvideotest.helpers({
      return TVideo.find({});
    }
  });
- 
+
  Template.Harddrive.helpers({
    harddrive: ()=>{
      return Harddrive.find({});
  }
-  
+
  });
- 
+
  Template.Powersupplies.helpers({
    powersupplies: ()=>{
      return Powersupplies.find({});
  }
- 
+
  });
- 
+
  Template.Motherboard.helpers({
    motherboard: ()=>{
      return Motherboard.find({});
  }
- 
+
  });
 
+Template.Ramtest.helpers({
+ram:()=>{
+return Ram.find({});
+}
+});

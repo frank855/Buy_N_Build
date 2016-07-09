@@ -1,0 +1,35 @@
+<template name="Ramtest">
+{{> Nav}}
+<div class="row">
+<div class="col-sm-2">
+{{> SideMenu}}
+</div>
+<div class="col-sm-4">
+  {{#each ram}}
+
+  <div class="panel panel-primary">
+  <div class="panel-heading">
+  <h3 class="panel-title">{{nombre}}</h3>
+  </div>
+  <div class="panel-body">
+  <ul>
+  <li> Memorias Ram: {{nombre}} {{tipo}} {{velocidad}} {{capacidad}} {{ecc}} {{precio}}</li>
+  <li> A solo <b>{{precio}}</b> </li>
+  <img src="/imgs/desktop2.jpg" class="img-responsive" alt="HP Desktop" width="200" height="100">
+  <a href="#"> Ver mas </a>
+  </ul>
+
+  {{#with FS.GetFile "images" (img)}}
+    <img src="{{this.url}}" class="img-responsive" alt="ImgDb" width="170" height="100">
+  {{/with}}
+  </div>
+  </div>
+
+<!--imagenes   -->
+
+
+
+  {{/each}}
+</div>
+</div>
+</template>

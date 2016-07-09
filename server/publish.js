@@ -26,3 +26,8 @@ Meteor.publish('powersupplies', function powersuppliesPub() {
 Meteor.publish('motherboard', function motherboardPub() {
       return Motherboard.find();
   });
+
+
+Meteor.publish('ram', function ramP() {
+        return Ram.find();
+    });
