@@ -32,3 +32,6 @@ cfs:gridfs
 cfs:autoform
 cfs:ui
 fortawesome:fontawesome
+kurounin:pagination
+check
+kurounin:pagination-blaze

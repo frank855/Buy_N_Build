@@ -1,54 +1,49 @@
 <template name="Desktop">
-
-<div class="col-md-4">
-  {{#each desktop}}
-  <div class="panel panel-default">
+<div class="col-md-6">
+  {{#each documents}}
+  <div class="panel panel-primary">
   <div class="panel-heading">
   <h3 class="panel-title">{{nombre}}</h3>
   </div>
   <div class="panel-body">
-
   <ul>
-  <li> Procesador: {{cpu_nom}} {{cpu_vel}}GHz </li>
-
+  <li> Procesador: {{cpu_nom}}  </li>
+<!-- {{cpu_vel}}GHz -->
   <li> Memoria Ram:
   <ul>
   {{#each ram}}
-  <li>{{ram_tipo}} {{ram_cap}}Gb {{ram_vel}}MHz</li>
+  <li>{{ram_tipo}} {{ram_cap}}Gb </li>
+  <!-- {{ram_vel}}MHz -->
   {{/each}}
   </ul>
   </li>
-
   <li> Disco Duro:
   <ul>
   {{#each hdd}}
-  <li>{{hdd_cap}}{{hdd_unit}} {{hdd_tipo}} {{hdd_vel}}{{hdd_velunit}}</li>
+  <li>{{hdd_cap}}{{hdd_unit}} {{hdd_tipo}} </li>
+  <!-- {{hdd_vel}}{{hdd_velunit}} -->
   {{/each}}
   </ul>
   </li>
-
-  <li> Tipo de adaptador de video: {{gpu_integrado}}
-  <ul>
+  <li> Tipo de adaptador de video: {{gpu_integrado}}  </li>
+  <!-- <ul>
   {{#each gpu}}
   <li>{{nombre_gpu}} {{gpu_cap}}Gb {{gpu_tipo_mem}}, Velocidad de memoria: {{gpu_vel}}MHz</li>
   {{/each}}
-  </ul>
-  </li>
-
+  </ul> -->
   <li> A solo <b>{{precio}}$</b> </li>
 
 {{#with FS.GetFile "images" (img)}}
   <img src="{{this.url}}" class="img-responsive" alt="ImgDb" width="170" height="100">
 {{/with}}
-
     <button type="submit" class="btn btn-md btn-primary " >Añadir a Carrito</button>
     <button type="submit" class="btn btn-md btn-primary " >Detalles</button>
-
+    <button type="submit" class="btn btn-md btn-warning " >Añadir al Build</button>
   </ul>
-
   </div>
   </div>
   {{/each}}
+  {{> defaultBootstrapPaginator pagination=templatePagination limit=10 containerClass="text-center"}}
 
 </div>
 </template>

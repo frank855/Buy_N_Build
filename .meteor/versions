@@ -65,6 +65,8 @@ insecure@1.0.7
 jquery@1.11.9
 kadira:blaze-layout@2.3.0
 kadira:flow-router@2.12.1
+kurounin:pagination@1.0.9
+kurounin:pagination-blaze@1.0.1
 launch-screen@1.0.12
 less@2.6.3_1
 livedata@1.0.18
@@ -125,6 +127,7 @@ standard-minifier-css@1.0.7_1
 standard-minifier-js@1.0.7_1
 templating@1.1.12_1
 templating-tools@1.0.4
+tmeasday:publish-counts@0.7.3
 tracker@1.0.14
 twbs:bootstrap@3.3.6
 ui@1.0.11

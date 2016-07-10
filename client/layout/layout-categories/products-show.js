@@ -2,7 +2,6 @@ import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { Meteor } from 'meteor/meteor';
 
-import './Desktop.html';
 import './Cpu.html';
 import './Casetest.html';
 import './Tvideotest.html';
@@ -11,7 +10,7 @@ import './Powersupplies.html';
 import './Motherboard.html';
 import './Ramtest.html';
 
-Meteor.subscribe('desktop');
+
 Meteor.subscribe('images');
 Meteor.subscribe('cpu');
 Meteor.subscribe('case');
@@ -20,12 +19,6 @@ Meteor.subscribe('harddrive');
 Meteor.subscribe('powersupplies');
 Meteor.subscribe('motherboard');
 Meteor.subscribe('ram');
-
-Template.Desktop.helpers({
-  desktop: ()=>{
-    return Desktop.find({});
-}
-});
 
 Template.Cpu.helpers({
   cpu: ()=>{

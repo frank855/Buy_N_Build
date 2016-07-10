@@ -1,6 +1,5 @@
-Meteor.publish('desktop', function desktopPublication() {
-    return Desktop.find();
-  });
+new Meteor.Pagination(Desktop);
+
 Meteor.publish('images', function desktopPublication() {
       return Images.find();
   });
