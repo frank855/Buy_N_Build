@@ -8,17 +8,57 @@ Fuente_de_Poder = new SimpleSchema({
     type: Number,
     label: "Voltaje de la Fuente de Poder",
   },
+  ps_Modular:{
+    type: String,
+    label: "si es modular o no la Fuente de Poder"
+    },
+    ps_certif:{
+      type: String,
+      label: "certificacion de la Fuente de Poder"
+      },
+    ps_conector:{
+      type: String,
+      label: "conectores presentes en la Fuente de Poder",
+      },
   ps_pins:{
     type: String,
-    label: "pines",
+    label: "pines en general",
+  },
+  ps_ATXpins:{
+    type: String,
+    label: "pines de la ATX",
+  },
+  ps_cantATXcont:{
+    type: Number,
+    label: "cantidad de conectores de la ATX",
+  },
+  ps_PCI_Epins:{
+    type: String,
+    label: "pines de la PCI-E",
+  },
+  ps_cantPCIEcont:{
+    type: Number,
+    label: "cantidad de conectores de PCI-E",
+  },
+  ps_SATApins:{
+    type: String,
+    label: "pines de SATA",
+  },
+  ps_cantSATAcont:{
+    type: Number,
+    label: "cantidad de conectores de SATA",
+  },
+  ps_Molexpins:{
+    type: String,
+    label: "pines de Molex",
+  },
+  ps_cantMoelxcont:{
+    type: Number,
+    label: "cantidad de conectores Molex",
   },
   ps_abanico:{
     type: String,
     label: "abanico que posee la Fuente de Poder",
-  },
-  ps_conector:{
-    type: String,
-    label: "conectores presentes en la Fuente de Poder",
   },
   ps_precio:{
     type: Number,

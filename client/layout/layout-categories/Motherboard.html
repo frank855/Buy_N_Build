@@ -18,17 +18,22 @@
   <li>Tarjeta Madre: {{mb_nombre}} </li>
   <li> Tipo de Socket: {{mb_socket}} </li>
   <li> Dispositivo de Almacenamiento: {{mb_dispalmac}} </li>
+  <li> Conectores de Almacenamiento: {{mb_conalmac}} </li>
 
   <li> Tipo de ram: {{mb_tram}} </li>
   <li> Numero de ranuras ram: {{mb_cranram}} </li>
   <li> Frecuencia de la ram: {{mb_frecram}} MHz </li>
-  <li> conector de alimentacion: {{mb_conpin}} </li>
+  <li> conector de alimentacion principal: {{mb_conATXprin}} </li>
+    <li> conector de alimentacion secundario: {{mb_conATXsec}} </li>
+
+  <li> Tipo de PCI-Ex16: {{mb_tPCI_Ex16}}</li>
+  <li> Numero de ranuras PCI-Ex16 : {{mb_cPCI_Ex16}} </li>
 
   <li> Tipo de PCI: {{mb_tPCI_E}}</li>
   <li> Numero de ranuras PCI-E : {{mb_cPCI}} </li>
 
   <li> Al precio de <b>{{mb_precio}} </b> </li>
-  
+
   {{#with FS.GetFile "images" (img)}}
     <img src="{{this.url}}" class="img-responsive" alt="ImgDb" width="170" height="100">
   {{/with}}
