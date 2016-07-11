@@ -1,16 +1,9 @@
 <template name="Powersupplies">
-{{> Nav}}
+  <div class="col-md-6">
+    {{#each documents}}
 
-<div class="row">
-<div class="col-sm-2">
-{{> SideMenu}}
-</div>
-
-<div class="col-sm-4">
-  {{#each powersupplies}}
-
-  <div class="panel panel-primary">
-  <div class="panel-heading">
+    <div class="panel panel-primary">
+    <div class="panel-heading">
   <h3 class="panel-title">{{ps_nombre}}</h3>
   </div>
   <div class="panel-body">
@@ -29,22 +22,19 @@
   <li> abanico: {{ps_abanico}} </li>
   <li> Conectores: {{ps_conector}} </li>
 
-  <li> Al precio de <b>{{ps_precio}} </b> </li>
+  <li> Al precio de <b>{{ps_precio}}$ </b> </li>
 
   {{#with FS.GetFile "images" (img)}}
   <img src="{{this.url}}" class="img-responsive" alt="ImgDb" width="170" height="100">
 {{/with}}
-
-    <button type="submit" class="btn btn-md btn-primary " >Añadir a Carrito</button>
-    <button type="submit" class="btn btn-md btn-primary " >Detalles</button>
-
-  </ul>
-
-  </div>
-  </div>
-  {{/each}}
-
+<button type="submit" class="btn btn-md btn-primary " >Añadir a Carrito</button>
+<button type="submit" class="btn btn-md btn-primary " >Detalles</button>
+<button type="submit" class="btn btn-md btn-warning " >Añadir al Build</button>
+</ul>
 </div>
+</div>
+{{/each}}
+{{> defaultBootstrapPaginator pagination=templatePagination limit=10 containerClass="text-center"}}
 
 </div>
 </template>

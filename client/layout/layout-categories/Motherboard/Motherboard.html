@@ -1,16 +1,9 @@
 <template name="Motherboard">
-{{> Nav}}
+  <div class="col-md-6">
+    {{#each documents}}
 
-<div class="row">
-<div class="col-sm-2">
-{{> SideMenu}}
-</div>
-
-<div class="col-sm-4">
-  {{#each motherboard}}
-
-  <div class="panel panel-primary">
-  <div class="panel-heading">
+    <div class="panel panel-primary">
+    <div class="panel-heading">
   <h3 class="panel-title">{{mb_nombre}}</h3>
   </div>
   <div class="panel-body">
@@ -32,22 +25,19 @@
   <li> Tipo de PCI: {{mb_tPCI_E}}</li>
   <li> Numero de ranuras PCI-E : {{mb_cPCI}} </li>
 
-  <li> Al precio de <b>{{mb_precio}} </b> </li>
+  <li> Al precio de <b>{{mb_precio}}$ </b> </li>
 
   {{#with FS.GetFile "images" (img)}}
     <img src="{{this.url}}" class="img-responsive" alt="ImgDb" width="170" height="100">
   {{/with}}
+  <button type="submit" class="btn btn-md btn-primary " >Añadir a Carrito</button>
+  <button type="submit" class="btn btn-md btn-primary " >Detalles</button>
+  <button type="submit" class="btn btn-md btn-warning " >Añadir al Build</button>
+</ul>
+</div>
+</div>
+{{/each}}
+{{> defaultBootstrapPaginator pagination=templatePagination limit=10 containerClass="text-center"}}
 
-      <button type="submit" class="btn btn-md btn-primary " >Añadir a Carrito</button>
-      <button type="submit" class="btn btn-md btn-primary " >Detalles</button>
-
-    </ul>
-
-    </div>
-    </div>
-    {{/each}}
-
-  </div>
-
-  </div>
-  </template>
+</div>
+</template>
