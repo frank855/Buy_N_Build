@@ -7,7 +7,12 @@
           <div class="navbar-collapse collapse">
                       <ul class="nav navbar-nav">
                         <li class="dropdown">
-
+                          <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cuenta <span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                            <li><a href="/login">Iniciar Sesión</a></li>
+                            <li><a href="/register">Crear Cuenta</a></li>
+                            <li><a href="#">Opciones de Cuenta</a></li>
+                          </ul> -->
                         </li>
                         <li><a href="#contact"><span class="glyphicon glyphicon-cog"></span> Arma tu PC</a></li>
                         <li class="dropdown">
@@ -19,10 +24,17 @@
                             <li><a href="#"><i class="fa fa-headphones"></i> Accesorios</a></li>
                           </ul>
                         </li>
-
-                        <ul class="nav navbar-nav">
-                          <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
-                          <li><a href="#">{{> loginButtons}}</a></li>
+                        <!-- Barra de busqueda -->
+                        <!-- <form class="navbar-form navbar-left" role="search">
+                            <div class="form-group">
+                             <input type="text" class="form-control" placeholder="Search">
+                            </div>
+                             <button type="submit" class="btn btn-default">Submit</button>
+                         </form> -->
+                        <!--Linea de sesion -->
+                        <ul class="nav navbar-nav navbar-right">
+                          <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Crear Cuenta</a></li>
+                          <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Iniciar Sesión</a></li>
                         </ul>
                       </ul>
                     </div>
