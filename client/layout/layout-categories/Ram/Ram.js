@@ -3,7 +3,7 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import { Meteor } from 'meteor/meteor';
 import './Ramtest.html';
 
-Meteor.subscribe('Ram');
+Meteor.subscribe('ram');
 
 Template.Ramtest.created = function () {
  this.pagination = new Meteor.Pagination(Ram, {

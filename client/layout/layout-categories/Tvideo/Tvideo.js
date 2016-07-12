@@ -3,7 +3,7 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import { Meteor } from 'meteor/meteor';
 import './Tvideotest.html';
 
-Meteor.subscribe('TVideo');
+Meteor.subscribe('tvideo');
 
 Template.Tvideotest.created = function () {
  this.pagination = new Meteor.Pagination(TVideo, {

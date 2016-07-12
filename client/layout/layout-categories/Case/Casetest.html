@@ -1,12 +1,7 @@
 <template name="Casetest">
-{{> Nav}}
-<div class="row">
-<div class="col-sm-2">
-{{> SideMenu}}
-</div>
 
-<div class="col-sm-4">
-  {{#each case}}
+<div class="col-md-6">
+  {{#each documents}}
   <div class="panel panel-primary">
   <div class="panel-heading">
   <h3 class="panel-title">{{nombre}}</h3>
@@ -33,13 +28,17 @@
     <img src="{{this.url}}" class="img-responsive" alt="ImgDb" width="170" height="100">
   {{/with}}
 
-  <img src="/imgs/desktop2.jpg" class="img-responsive" alt="HP Desktop" width="200" height="100">
-  <a href="#"> Ver mas </a>
+  <button type="submit" class="btn btn-md btn-primary " >Añadir a Carrito</button>
+  <button type="submit" class="btn btn-md btn-primary " >Detalles</button>
+  <button type="submit" class="btn btn-md btn-warning " >Añadir al Build</button>
+
+
   </ul>
   </div>
   </div>
   {{/each}}
-</div>
+  {{> defaultBootstrapPaginator pagination=templatePagination limit=10 containerClass="text-center"}}
+
 
 </div>
 

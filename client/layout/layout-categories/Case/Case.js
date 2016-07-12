@@ -3,7 +3,7 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import { Meteor } from 'meteor/meteor';
 import './Casetest.html';
 
-Meteor.subscribe('Case');
+Meteor.subscribe('case');
 
 Template.Casetest.created = function () {
  this.pagination = new Meteor.Pagination(Case, {
