@@ -19,12 +19,40 @@
   <li> conector de alimentacion principal: {{mb_conATXprin}} </li>
     <li> conector de alimentacion secundario: {{mb_conATXsec}} </li>
 
-  <li> Tipo de PCI-Ex16: {{mb_tPCI_Ex16}}</li>
   <li> Numero de ranuras PCI-Ex16 : {{mb_cPCI_Ex16}} </li>
 
-  <li> Tipo de PCI: {{mb_tPCI_E}}</li>
   <li> Numero de ranuras PCI-E : {{mb_cPCI}} </li>
 
+  <li> Puertos del Panel Trasero:
+  <ul>
+  {{#each puertos}}
+  
+  <li>Puertos PS/2</li>
+             <li>ranuras de tipo PS/2 para teclado :{{pt_PS2_teclado}}  </li>
+             <li>ranuras de tipo PS/2 para Mouse :{{pt_PS2_mouse}}  </li>
+
+  <li>Puertos de Video:</li>
+             <li>cantidad de ranuras de video VGA :{{pt_VGA}}  </li>
+             <li>ranura de ranuras de video DVI :{{pt_DVI}}  </li>
+
+  <li>Puertos HDMI</li>
+             <li>cantidad de ranuras HDMI:{{pt_HDMI}}  </li>
+
+  <li>Puertos de LAN:</li>
+             <li>cantidad de ranuras de LAN :{{pt_LAN}}  </li>
+
+  <li>Puertos de entrada USB 2.0:</li>
+             <li>cantidad de ranuras de USB 2.0:{{pt_USB2}}  </li>
+
+  <li>Puertos de entrada USB 3.0:</li>
+             <li>cantidad de ranuras de USB 3.0:{{pt_USB3}}  </li>
+
+  <li>Puertos de Audio:</li>
+             <li>cantidad de ranuras pra audio:{{pt_audio}}  </li>
+
+{{/each}}
+</ul>
+</li>
   <li> Al precio de <b>{{mb_precio}}$ </b> </li>
 
   {{#with FS.GetFile "images" (img)}}
