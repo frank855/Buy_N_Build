@@ -1,11 +1,13 @@
 <template name="Desktop">
-<div class="col-md-6">
+<div class="col-md-8">
   {{#each documents}}
   <div class="panel panel-primary">
   <div class="panel-heading">
   <h3 class="panel-title">{{nombre}}</h3>
   </div>
   <div class="panel-body">
+  <div class="row">
+    <div class="col-md-6">
   <ul>
   <li> Procesador: {{cpu_nom}}  </li>
 <!-- {{cpu_vel}}GHz -->
@@ -32,17 +34,31 @@
   {{/each}}
   </ul> -->
   <li> A solo <b>{{precio}}$</b> </li>
-
+</ul>
+</div>
+    <div class="col-md-6">
 {{#with FS.GetFile "images" (img)}}
   <img src="{{this.url}}" class="img-responsive" alt="ImgDb" width="170" height="100">
 {{/with}}
-    <button type="submit" class="btn btn-md btn-primary " >Añadir a Carrito</button>
-    <button type="submit" class="btn btn-md btn-primary " >Detalles</button>
-    <button type="submit" class="btn btn-md btn-warning " >Añadir al Build</button>
-  </ul>
-  </div>
-  </div>
+</div>
+</div>
+</div>
+<div align="center">
+<div class="panel-footer">
+  <!-- importante que el botton donde añaden el producto al cart y el text escondido esten en el mismo form -->
+<form>
+  <button type="submit" class="btn btn-md btn-primary" data-action="cart-add" ><i class="fa fa-cart-plus"></i> Añadir a Carrito</button>
+  <button type="submit" class="btn btn-md btn-primary" ><i class="fa fa-list-ul"></i> Detalles</button>
+  <button type="submit" class="btn btn-md btn-warning" ><i class="fa fa-cubes"></i> Añadir al Build</button>
+  <br>
+  <!-- importante para conseguir el id del producto apuntado (Cochinada de codigo, debe haber una mejor forma) -->
+<input type="hidden" name="idp" value={{_id}} size="1">
+</form>
+</div>
+</div>
+</div>
   {{/each}}
+<!-- ui de paginación -->
   {{> defaultBootstrapPaginator pagination=templatePagination limit=10 containerClass="text-center"}}
 
 </div>

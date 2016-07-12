@@ -23,7 +23,6 @@ kadira:flow-router
 twbs:bootstrap
 kadira:blaze-layout
 session
-accounts-ui
 aldeed:autoform
 aldeed:collection2
 meteortoys:allthings
@@ -35,3 +34,8 @@ fortawesome:fontawesome
 kurounin:pagination
 check
 kurounin:pagination-blaze
+ian:accounts-ui-bootstrap-3
+mrgalaxy:stripe
+momentjs:moment
+random
+meteorhacks:aggregate
