@@ -18,6 +18,7 @@ cantidadbahia:{
 tamaño:{
   type: Number,
   label: "tamaño de la bahia",
+  decimal: true,
 }
 });
 
@@ -56,7 +57,7 @@ img:{
     }
   }
   },
-  
+
 });
 
 Case.attachSchema(Schemas);

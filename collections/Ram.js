@@ -15,6 +15,7 @@ label:"Tipo DDR2-3-4",
 velocidad:{
   type: String,
   label:"Velocidad MHz",
+  decimal: true,
 },
 
 capacidad:{
@@ -25,6 +26,7 @@ label:"Capacidad GB",
 precio:{
   type: Number,
   label:"Precio",
+  decimal: true,
 },
 
 ecc:{

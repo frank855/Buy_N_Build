@@ -23,6 +23,7 @@ nombre:{
 interfaz:{
   type: Number,
   label: "Interfaz PCI-E 2.0-3.0",
+  decimal: true,
 },
 
 pines:{
@@ -38,6 +39,7 @@ gpu:{
 relojnucleo:{
   type: Number,
   label: "Reloj del nucleo MHz",
+  decimal: true,
 },
 
 tamañomemoria:{
