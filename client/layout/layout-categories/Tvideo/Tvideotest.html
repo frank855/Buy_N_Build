@@ -1,6 +1,7 @@
 <Template name="Tvideotest">
 
 <div class="col-md-6">
+  <h1>Tarjetas de Video Disponibles</h1><br>
   {{#each documents}}
   <div class="panel panel-primary">
   <div class="panel-heading">
@@ -8,23 +9,37 @@
   </div>
   <div class="panel-body">
   <ul>
-  <li> Tarjeta de video: {{nombre}} {{interfaz}} {{pines}} {{gpu}} {{relojnucleo}} {{tamañomemoria}} {{interfazmemoria}} {{tipomemoria}} {{precio}}</li>
+  <li> Nombre: {{nombre}} </li>
+  <li>  Iterfaz PCI-E: {{interfaz}} </li>
+  <li>  Numero de Pines:{{pines}} </li>
+    <li> GPU: {{gpu}} </li>
+    <li> Velocidad del reloj: {{relojnucleo}} MHz </li>
+    <li> Tamaño: {{tamañomemoria}} GB </li>
+    <li> Interfaz de memoria: {{interfazmemoria}} bits </li>
+  <li>Tipo: {{tipomemoria}} </li>
+
 
 Puertos
   {{#each puertos}}
-  <li> Puertos: {{puerto}}{{cantidad}} </li>
+  <li> Puertos: {{puerto}} X {{cantidad}} </li>
   {{/each}}
-
-Insertar imagen
+  <br>
+  <li> Precio: {{precio}}</li>
+<!-- Insertar imagen -->
   {{#with FS.GetFile "images" (img)}}
     <img src="{{this.url}}" class="img-responsive" alt="ImgDb" width="170" height="100">
   {{/with}}
 
-  <li> A solo <b>{{precio}}</b> </li>
 
-  <button type="submit" class="btn btn-md btn-primary " >Añadir a Carrito</button>
-  <button type="submit" class="btn btn-md btn-primary " >Detalles</button>
-  <button type="submit" class="btn btn-md btn-warning " >Añadir al Build</button>
+  <form>
+    <button type="submit" class="btn btn-md btn-primary" data-action="cart-add" ><i class="fa fa-cart-plus"></i> Añadir a Carrito</button>
+    <button type="submit" class="btn btn-md btn-primary" ><i class="fa fa-list-ul"></i> Detalles</button>
+    <button type="submit" class="btn btn-md btn-warning" ><i class="fa fa-cubes"></i> Añadir al Build</button>
+    <br>
+    <!-- importante para conseguir el id del producto apuntado (Cochinada de codigo, debe haber una mejor forma) -->
+  <input type="hidden" name="idp" value={{_id}} size="1">
+  </form>
+
   </ul>
   </div>
   </div>

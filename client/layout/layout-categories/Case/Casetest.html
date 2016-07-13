@@ -1,6 +1,7 @@
 <template name="Casetest">
 
 <div class="col-md-6">
+  <h1>Cajas Disponibles</h1><br>
   {{#each documents}}
   <div class="panel panel-primary">
   <div class="panel-heading">
@@ -8,30 +9,39 @@
   </div>
   <div class="panel-body">
   <ul>
-  <li> Case: {{nombre}} {{precio}} {{ranuras}} </li>
+  <li> Nombre: {{nombre}} </li>
+  <li>Ranuras de expancion: {{ranuras}} </li>
 
-  Tarjeta madre compatibles
+  Tarjeta madre compatibles:
 
   {{#each tarjetamadrecompatible}}
-  <li> Tarjeta: {{tarjeta}} </li>
+  <li> {{tarjeta}} </li>
   {{/each}}
 
-  Bahia para disco duros
+  Bahías para disco duro:
 
   {{#each discoduro}}
-  <li> disco: {{cantidadbahia}} {{tamaño}}</li>
+  <li> {{cantidadbahia}} de {{tamaño}}"</li>
   {{/each}}
-
-  Insertar imagen
+  <br>
+  <li>Precio: {{precio}} </li>
+  <!-- Insertar imagen -->
 
   {{#with FS.GetFile "images" (img)}}
     <img src="{{this.url}}" class="img-responsive" alt="ImgDb" width="170" height="100">
   {{/with}}
 
-  <button type="submit" class="btn btn-md btn-primary " >Añadir a Carrito</button>
-  <button type="submit" class="btn btn-md btn-primary " >Detalles</button>
-  <button type="submit" class="btn btn-md btn-warning " >Añadir al Build</button>
-
+<div align="center">
+<div class="panel-footer">
+<form>
+  <button type="submit" class="btn btn-md btn-primary" data-action="cart-add" ><i class="fa fa-cart-plus"></i> Añadir a Carrito</button>
+  <button type="submit" class="btn btn-md btn-primary" ><i class="fa fa-list-ul"></i> Detalles</button>
+  <button type="submit" class="btn btn-md btn-warning" ><i class="fa fa-cubes"></i> Añadir al Build</button>
+<br>
+  <input type="hidden" name="idp" value={{_id}} size="1">
+</form>
+</div>
+</div>
 
   </ul>
   </div>
