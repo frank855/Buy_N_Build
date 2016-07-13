@@ -137,7 +137,7 @@ img {
   .slider nav a:hover{
       background:#111;
   }
-  label{
+  .slider label{
       display:block;
       font-weight:700;
       background:#337ab7;
