@@ -137,7 +137,7 @@ img {
   .slider nav a:hover{
       background:#111;
   }
-  label{
+  .slider label{
       display:block;
       font-weight:700;
       background:#337ab7;
@@ -157,22 +157,17 @@ img {
       transition:all 200ms ease-in;
       z-index:500;
   }
-  input[type="checkbox"]{
+  .slider input[type="checkbox"]{
       display:none;
   }
-  input[type="checkbox"]:checked ~ nav{
+  .slider input[type="checkbox"]:checked ~ nav{
       right:0;
       margin:0;
   }
-  input[type="checkbox"]:checked ~ label{
+  .slider input[type="checkbox"]:checked ~ label{
       right:260px;
   }
-  input[type="checkbox"]:checked ~ section{
-      -webkit-transform:translate3d(260px, 0, 0);
-      -moz-transform:translate3d(260px, 0, 0);
-      -o-transform:translate3d(260px, 0, 0);
-      transform:translate3d(260px, 0, 0);
-  }
+
 
 /*Iconos customizados de icomoon*/
   @font-face {
