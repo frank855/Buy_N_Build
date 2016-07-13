@@ -16,21 +16,25 @@ Fuente_de_Poder = new SimpleSchema({
       type: String,
       label: "certificacion de la Fuente de Poder"
       },
-    ps_conector:{
-      type: String,
-      label: "conectores presentes en la Fuente de Poder",
-      },
-  ps_pins:{
-    type: String,
-    label: "pines en general",
-  },
+  //  ps_conector:{
+  //    type: String,
+  //    label: "conectores presentes en la Fuente de Poder",
+  //    },
   ps_ATXpins:{
     type: String,
-    label: "pines de la ATX",
+    label: "pines  de la ATX",
   },
   ps_cantATXcont:{
     type: Number,
     label: "cantidad de conectores de la ATX",
+  },
+  ps_CPUpins:{
+    type: String,
+    label: "pines de la CPU",
+  },
+  ps_cantCPUcont:{
+    type: Number,
+    label: "cantidad de conectores de la CPU",
   },
   ps_PCI_Epins:{
     type: String,

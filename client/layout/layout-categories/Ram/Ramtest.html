@@ -1,5 +1,6 @@
 <template name="Ramtest">
-  <div class="col-md-6">
+  <div class="col-md-7">
+    <h1>Memorias Ram Disponibles</h1><br>
     {{#each documents}}
 
     <div class="panel panel-primary">
@@ -14,16 +15,25 @@
 
   <li> capacidad: {{capacidad}} </li>
   <li> ECC: {{ecc}} </li>
+  <br>
   <li> Precio: {{precio}} </li>
+ <br>
 
-  <li> Al precio de <b>{{dd_precio}}$ </b> </li>
 
   {{#with FS.GetFile "images" (img)}}
     <img src="{{this.url}}" class="img-responsive" alt="ImgDb" width="170" height="100">
   {{/with}}
-  <button type="submit" class="btn btn-md btn-primary " >Añadir a Carrito</button>
-  <button type="submit" class="btn btn-md btn-primary " >Detalles</button>
-  <button type="submit" class="btn btn-md btn-warning " >Añadir al Build</button>
+
+
+  <form>
+    <button type="submit" class="btn btn-md btn-primary" data-action="cart-add" ><i class="fa fa-cart-plus"></i> Añadir a Carrito</button>
+    <button type="submit" class="btn btn-md btn-primary" ><i class="fa fa-list-ul"></i> Detalles</button>
+    <button type="submit" class="btn btn-md btn-warning" ><i class="fa fa-cubes"></i> Añadir al Build</button>
+    <br>
+    <!-- importante para conseguir el id del producto apuntado (Cochinada de codigo, debe haber una mejor forma) -->
+  <input type="hidden" name="idp" value={{_id}} size="1">
+  </form>
+
 </ul>
 </div>
 </div>

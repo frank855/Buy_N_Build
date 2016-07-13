@@ -64,7 +64,7 @@ Tarjeta_Madre = new SimpleSchema({
     label: "Cantidad de ranuras ram de la Tarjeta Madre",
   },
   mb_frecram:{
-    type: Number,
+    type: String,
     label: "Frecuencia de ram de la Tarjeta Madre",
   },
 //este es para el ATX de de 24 pines

@@ -1,5 +1,5 @@
 <template name="Powersupplies">
-  <div class="col-md-6">
+  <div class="col-md-8">
     {{#each documents}}
 
     <div class="panel panel-primary">
@@ -7,34 +7,53 @@
   <h3 class="panel-title">{{ps_nombre}}</h3>
   </div>
   <div class="panel-body">
+  <div class="row">
+    <div class="col-md-6">
   <ul>
   <li> Fuente de Poder: {{ps_nombre}} </li>
   <li> con Voltaje: {{ps_watt}} W</li>
   <li> certificacion: {{ps_certif}} </li>
   <li> Modular: {{ps_Modular}} </li>
-  <li> pin: {{ps_pins}} </li>
 
-  <li> conector ATX:{{ps_cantATXcont}} x {{ps_ATXpins}} </li>
-  <li> conector PCI-E:{{ps_cantPCIEcont}} x {{ps_PCI_Epins}} </li>
-  <li> conector SATA:{{ps_cantSATAcont}} x {{ps_SATApins}} </li>
-  <li> conector Molex:{{ps_cantMoelxcont}} x {{ps_Molexpins}} </li>
+
+  <li> conector ATX:{{ps_cantATXcont}}  x  {{ps_ATXpins}} </li>
+  <li> conector CPU:{{ps_cantCPUcont}}  x  {{ps_CPUpins}} </li>
+  <li> conector PCI-E:{{ps_cantPCIEcont}}  x  {{ps_PCI_Epins}} </li>
+  <li> conector SATA:{{ps_cantSATAcont}}  x  {{ps_SATApins}} </li>
+  <li> conector Molex:{{ps_cantMoelxcont}}  x  {{ps_Molexpins}} </li>
 
   <li> abanico: {{ps_abanico}} </li>
   <li> Conectores: {{ps_conector}} </li>
 
   <li> Al precio de <b>{{ps_precio}}$ </b> </li>
+</ul>
+  </div>
+      <div class="col-md-6">
 
   {{#with FS.GetFile "images" (img)}}
   <img src="{{this.url}}" class="img-responsive" alt="ImgDb" width="170" height="100">
 {{/with}}
-<button type="submit" class="btn btn-md btn-primary " >Añadir a Carrito</button>
-<button type="submit" class="btn btn-md btn-primary " >Detalles</button>
-<button type="submit" class="btn btn-md btn-warning " >Añadir al Build</button>
-</ul>
+
 </div>
 </div>
-{{/each}}
-{{> defaultBootstrapPaginator pagination=templatePagination limit=10 containerClass="text-center"}}
+</div>
+<div align="center">
+<div class="panel-footer">
+  <!-- importante que el botton donde añaden el producto al cart y el text escondido esten en el mismo form -->
+<form>
+  <button type="submit" class="btn btn-md btn-primary" data-action="cart-add" ><i class="fa fa-cart-plus"></i> Añadir a Carrito</button>
+  <button type="submit" class="btn btn-md btn-primary" ><i class="fa fa-list-ul"></i> Detalles</button>
+  <button type="submit" class="btn btn-md btn-warning" ><i class="fa fa-cubes"></i> Añadir al Build</button>
+  <br>
+  <!-- importante para conseguir el id del producto apuntado (Cochinada de codigo, debe haber una mejor forma) -->
+<input type="hidden" name="idp" value={{_id}} size="1">
+</form>
+</div>
+</div>
+</div>
+  {{/each}}
+<!-- ui de paginación -->
+  {{> defaultBootstrapPaginator pagination=templatePagination limit=10 containerClass="text-center"}}
 
 </div>
 </template>
